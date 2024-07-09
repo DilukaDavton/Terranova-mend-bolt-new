@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terranova_WebAPI", "Terranova_WebAPI.csproj", "{80F450BB-C737-4085-B7D8-A35EC8D9D2DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terranova_APIClient", "..\Terranova_APIClient\Terranova_APIClient.csproj", "{FE69DF5E-92EE-40BE-A433-4ED049BF99CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terranova_GraphClient", "..\Terranova_GraphClient\Terranova_GraphClient.csproj", "{B1C7F524-09D3-43FD-8B60-C641AC2208FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terranova_DBClient", "..\Terranova_DBClient\Terranova_DBClient.csproj", "{6B2501EE-D18D-4C88-AA2B-F72B67124A25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80F450BB-C737-4085-B7D8-A35EC8D9D2DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F450BB-C737-4085-B7D8-A35EC8D9D2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F450BB-C737-4085-B7D8-A35EC8D9D2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F450BB-C737-4085-B7D8-A35EC8D9D2DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE69DF5E-92EE-40BE-A433-4ED049BF99CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE69DF5E-92EE-40BE-A433-4ED049BF99CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE69DF5E-92EE-40BE-A433-4ED049BF99CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69DF5E-92EE-40BE-A433-4ED049BF99CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C7F524-09D3-43FD-8B60-C641AC2208FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C7F524-09D3-43FD-8B60-C641AC2208FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C7F524-09D3-43FD-8B60-C641AC2208FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C7F524-09D3-43FD-8B60-C641AC2208FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2501EE-D18D-4C88-AA2B-F72B67124A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2501EE-D18D-4C88-AA2B-F72B67124A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2501EE-D18D-4C88-AA2B-F72B67124A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2501EE-D18D-4C88-AA2B-F72B67124A25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5ABAF403-AE6B-445C-98CD-645AA456524E}
+	EndGlobalSection
+EndGlobal

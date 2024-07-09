@@ -1,0 +1,54 @@
+/* eslint-disable prettier/prettier */
+import TypeSelection from "./TypeSelection";
+
+export default class Configuration {
+    versionNo: string;
+    displayConfirmation: boolean;
+    promptUserForTypeSelection: boolean;
+    typeSelectionButtonCaptions: TypeSelection[];
+    typeSelectionPromptMessageCaption: string;
+    commentBoxEnabled: boolean;
+    commentBoxCaption: string;
+    simulationReportFeedbackMessage: string;
+    simulationIncidentResponseEnabled: boolean;
+    simulationIncidentResponseEmail: string;
+    reportFeedbackMessage: string;
+    incidentResponseEnabled: boolean;
+    incidentResponseEmail: string;
+    bccForwardingEnbled: boolean;
+    bccForwardingEmail: string;
+    bccForwardingSimulatedEmail: boolean;
+    bccForwardingNonSimulatedEmail: boolean;
+    microsoftReportingEnabled: boolean;
+    confirmationPromptMessageCaption: string;
+    nextButtonCaption: string;
+    moveToJunkButtonCaption: string;
+    moveToDeletedItemsButtonCaption: string;
+    displaySimulationReinforcementMessage: boolean;
+    moveNonSimulationEmailsToJunk: boolean;
+    moveSimulationEmailsToJunk: boolean;
+    forwardEmailAsAttachment: boolean;
+    authorizeButtonBackgroundColor: string;
+    authorizeButtonForegroundColor: string;
+    userAuthorizationButtonText: string;
+    userAuthorizationDescriptionText: string;
+    userAuthorizationScreenDisplay: boolean;
+    nextConfirmationMessageButtonText: string;
+    nextConfirmationMessageButtonBackgroundColor: string;
+    nextConfirmationMessageButtonForegroundColor: string;
+    nextTypeAndCommentButtonText: string;
+    nextTypeAndCommentButtonBackgroundColor: string;
+    nextTypeAndCommentButtonForegroundColor: string;
+    moveButtonBackgroundColor: string;
+    moveButtonForegroundColor: string;
+    movedToJunkText: string;
+    movedToDeletedItemsText: string;
+    authorizingLabelText: string;
+    validatingAuthText: string;
+    reportingText: string;
+    movingText: string;
+    loadingLabelText: string;
+    displayFeedbackScreen: boolean;
+    formatTitleForOffice365SecurityReportSubmission: boolean;
+    attachEmailWithOriginalTitle: boolean;
+}

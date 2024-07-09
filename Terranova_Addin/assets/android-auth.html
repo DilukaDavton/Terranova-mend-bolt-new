@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+4  See LICENSE in the project root for license information -->
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="ms-Spinner spinnerDiv">
+        <div class="ms-Spinner-circle ms-Spinner--medium circle"></div>
+        <div class="ms-Spinner-label spinnerLabel">Loading...</div>
+      </div>
+    </div>
+
+    <style>
+     .spinnerDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+  }
+.circle {
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: rgb(0, 120, 212) rgb(199, 224, 244) rgb(199, 224, 244);
+    border-image: initial;
+    animation-name: css-112;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+    width: 20px;
+    height: 20px;
+}
+.spinnerLabel {
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(0, 120, 212);
+    margin: 8px 0px 0px;
+    text-align: center;
+}
+    </style>
+
+    <script>
+        var authlink = "";
+      Office.initialize = function () {
+        openBrowserWindow();
+      };
+
+      
+
+      function openBrowserWindow() {
+        let searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('url')) {
+          let param = searchParams.get('url');
+          let addinGuid = searchParams.get('tokenRetrievalGuid');
+          let isIntuneConfigured = searchParams.get('isIntuneConfigured');
+          $.get(`${param}?tokenRetrievalGuid=${addinGuid}&isIntuneConfigured=${isIntuneConfigured}`, function( data ) {
+              console.log(data);
+              window.open(data);
+              closeDialog(addinGuid);             
+          });
+        }
+        }
+
+        function closeDialog(addinGuid){
+          var messageObject = { messageType: "signinSuccess", addinGuid:addinGuid};
+          var jsonMessage = JSON.stringify(messageObject);
+          Office.context.ui.messageParent(jsonMessage);
+        }
+    </script>
+  </body>
+</html>

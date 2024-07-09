@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+4  See LICENSE in the project root for license information -->
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+  </head>
+  <body>
+    <div class="ms-Spinner centered"></div>
+    <style>
+      .centered {
+        position: fixed; /* or absolute */
+        top: 50%;
+        left: 50%;
+      }
+    </style>
+
+    <script>
+      Office.initialize = function () {
+        showLogin();
+      };
+
+      function showLogin() {
+        let paramValue = '';
+        paramValue = getUrlParameter("url");
+        $.get(paramValue, function( data ) {
+              console.log(data);
+              window.location.replace(data);              
+          });
+      }
+
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+    </script>
+  </body>
+</html>

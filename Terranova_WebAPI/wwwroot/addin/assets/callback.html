@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+4  See LICENSE in the project root for license information -->
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="ms-Grid ms-welcome headerDiv">
+        <div class="ms-Grid">
+          <h4 class="header-text" id="headerText">Obtaining token. </h4>
+        </div>
+      </div>
+    </div>
+    <style>
+      .headerDiv {
+       margin-top: 25%;
+       text-align: center;
+      }
+      h4 {
+        display: block;
+        margin-block-start: 1.33em;
+        margin-block-end: 1.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      .header-text:hover {
+          color: #333;
+      }
+      .header-text {
+          font-size: 50px;
+          font-weight: 100;
+          color: #333;
+      }
+    </style>
+
+    <script>
+      $( document ).ready(function() {
+        saveToken();
+      });
+
+      function saveToken() {
+        let searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('code')) {
+          let codeParamVal = searchParams.get('code'); 
+          let stateParamVal = searchParams.get('state'); 
+          let request ={
+            Code:codeParamVal,
+            TokenRetrievalGuid:stateParamVal
+        }
+          $.ajax({
+          url: `${window.location.origin}/api/auth/save-token`,
+          contentType:"application/json",
+          data:JSON.stringify(request),
+          type: "post",
+          success: function (response) {
+                    console.log(response);
+                    $('#headerText').text("Authorization complete, Please go back to outlook to continue reporting.")
+                
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+           console.log(textStatus);
+           $('#headerText').text(textStatus)
+          }
+        });
+        }
+        else{
+          $('#headerText').text("No code available")
+        }
+      }
+    </script>
+  </body>
+</html>
